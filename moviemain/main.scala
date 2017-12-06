@@ -12,8 +12,14 @@ package main {
 
   object main extends App {
     val maindir = "/data/movies/"
-    val netflixURL = ""
-    val imdbURL = ""
+    val omDBURL = s"http://www.omdbapi.com/?apikey=$apikey&t=blade+runner&plot=full&r=xml"
+    // val x = scala.xml.XML.load("http://www.omdbapi.com/?apikey=&t=blade+runner&plot=full&r=xml")
+    // val plot = (x \\ "@plot").mkString
+
+    // Actions:
+    // - sync: match filesystem with DB (adds, removes)
+    // - match: get descriptions from imDB for new movies
+    // - play: put up web interface for viewing & playing
 
     // ToDo: Scan movie files recursively
     // ToDo: Add the ones NOT in DB
