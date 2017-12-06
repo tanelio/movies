@@ -3,14 +3,18 @@ import slick.lifted.Tag
 
 package main {
 
-  class Files(tag: Tag) extends Table[(String, String, Timestamp)](tag, "FILES") {
+  class Files(tag: Tag) extends Table[(String, String, Timestamp, Boolean, String)](tag, "FILES") {
     def fname = column[String]("fname", O.PrimaryKey)
     def URL = column[String]("URL")
-    def released = comun[Timetamp]("released")
-    def * = (fname, URL, released)
+    def released = column[Timetamp]("released")
+    def deleted = column[Boolean]("deleted")
+    def xml = column[String]("xml")
+    def * = (fname, URL, released, deleted, xml)
   }
 
   object main extends App {
+    val exts = "m4v,mkv,avi,mpg,mp4"
+    val aux = "sub,idx"
     val maindir = "/data/movies/"
     val omDBURL = s"http://www.omdbapi.com/?apikey=$apikey&t=blade+runner&plot=full&r=xml"
     // val x = scala.xml.XML.load("http://www.omdbapi.com/?apikey=&t=blade+runner&plot=full&r=xml")
