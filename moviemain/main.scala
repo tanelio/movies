@@ -13,8 +13,8 @@ package main {
   }
 
   object main extends App {
-    val exts = "m4v,mkv,avi,mpg,mp4"
-    val aux = "sub,idx"
+    val exts = ".m4v,.mkv,.avi,.mpg,.mp4"
+    val aux = ".sub,.idx"
     val maindir = "/data/movies/"
     val omDBURL = s"http://www.omdbapi.com/?apikey=$apikey&t=blade+runner&plot=full&r=xml"
     // val x = scala.xml.XML.load("http://www.omdbapi.com/?apikey=&t=blade+runner&plot=full&r=xml")
