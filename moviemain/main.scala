@@ -3,13 +3,14 @@ import slick.lifted.Tag
 
 package main {
 
-  class Files(tag: Tag) extends Table[(String, String, Timestamp, Boolean, String)](tag, "FILES") {
+  class Files(tag: Tag) extends Table[(String, String, Timestamp, Boolean, Boolean, String)](tag, "FILES") {
     def fname = column[String]("fname", O.PrimaryKey)
     def URL = column[String]("URL")
     def released = column[Timetamp]("released")
     def deleted = column[Boolean]("deleted")
+    def noomdb = column[Boolean]("noomdb")
     def xml = column[String]("xml")
-    def * = (fname, URL, released, deleted, xml)
+    def * = (fname, URL, released, deleted, noomdb, xml)
   }
 
   object main extends App {
